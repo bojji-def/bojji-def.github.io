@@ -4,103 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freddy Sabenorio | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* ALL THE SPACE THEME STYLES ARE NOW INSIDE HERE */
+        :root[data-theme="dark"] {
+            --bg: #05070a;
+            --accent: #a29bfe;
+            --text: #ffffff;
+            --card: rgba(255, 255, 255, 0.05);
+            --nav: rgba(10, 10, 15, 0.9);
+            --space-gradient: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+        }
+        :root[data-theme="light"] {
+            --bg: #f0f2f5;
+            --accent: #6c5ce7;
+            --text: #1a1a1a;
+            --card: rgba(255, 255, 255, 0.9);
+            --nav: rgba(255, 255, 255, 0.9);
+            --space-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        body {
+            background: var(--space-gradient);
+            background-attachment: fixed;
+            color: var(--text);
+            font-family: sans-serif;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--nav);
+            backdrop-filter: blur(10px);
+            padding: 12px 25px;
+            border-radius: 40px;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .navbar a { text-decoration: none; color: var(--text); display: flex; align-items: center; gap: 5px; font-size: 14px; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .profile-pic { width: 120px; border-radius: 50%; border: 3px solid var(--accent); margin-bottom: 15px; }
+        .section { padding: 80px 20px; max-width: 800px; margin: 0 auto; }
+        .glass-card { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .skill-pill { background: var(--accent); color: white; padding: 8px 15px; border-radius: 20px; display: inline-flex; align-items: center; gap: 8px; margin: 5px; }
+        .theme-btn { background: none; border: none; color: var(--text); cursor: pointer; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="nav-links">
-                <a href="#home"><i data-lucide="home"></i> Home</a>
-                <a href="#about"><i data-lucide="user"></i> About Me</a>
-                <a href="#skills"><i data-lucide="cpu"></i> Skills</a>
-                <a href="#projects"><i data-lucide="rocket"></i> Projects</a>
-                <a href="#contact"><i data-lucide="mail"></i> Contact</a>
-                <button id="theme-toggle" class="theme-btn">
-                    <i data-lucide="moon" id="theme-icon"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <a href="#home"><i data-lucide="home"></i> Home</a>
+        <a href="#about"><i data-lucide="user"></i> About</a>
+        <a href="#skills"><i data-lucide="cpu"></i> Skills</a>
+        <a href="#contact"><i data-lucide="mail"></i> Contact</a>
+        <button id="theme-toggle" class="theme-btn"><i data-lucide="moon" id="theme-icon"></i></button>
+    </nav>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <img src="https://via.placeholder.com/150" alt="Freddy Sabenorio" class="profile-pic">
-                <h1>Freddy Sabenorio</h1>
-                <p class="quote">"You didn't go through all that for nothing."</p>
-                <p>Welcome to my corner of the universe. Explore my journey and creations below.</p>
-            </div>
-        </section>
+    <section id="home" class="hero">
+        <img src="https://via.placeholder.com/150" class="profile-pic">
+        <h1>Freddy Sabenorio</h1>
+        <p style="font-style: italic; color: var(--accent);">"You didn't go through all that for nothing."</p>
+    </section>
 
-        <section id="about" class="section">
-            <h2 class="section-header">About Me</h2>
-            <div class="glass-card">
-                <h3>Educational Background</h3>
-                <p>1st Year Information Technology Student. Exploring the vast frontiers of technology and design.</p>
-                
-                <h3>Technical Interests</h3>
-                <p>I'm curious about the future and how digital design shapes our reality.</p>
-
-                <h3>Hobbies</h3>
-                <div class="hobbies-grid">
-                    <span><i data-lucide="gamepad-2"></i> Online Games</span>
-                    <span><i data-lucide="award"></i> Badminton</span>
-                    <span><i data-lucide="tv"></i> Watching K-Dramas</span>
-                </div>
+    <section id="about" class="section">
+        <div class="glass-card">
+            <h2>About Me</h2>
+            <p>1st Year IT Student | Curious about the future.</p>
+            <div style="margin-top:20px;">
+                <p><i data-lucide="gamepad-2"></i> Online Games</p>
+                <p><i data-lucide="award"></i> Badminton</p>
+                <p><i data-lucide="tv"></i> K-Dramas</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills" class="section">
-            <h2 class="section-header">Skills</h2>
-            <div class="skills-container">
-                <div class="skill-pill"><i data-lucide="palette"></i> Newbie Designer</div>
-                <div class="skill-pill"><i data-lucide="layout"></i> Canva</div>
-                <div class="skill-pill"><i data-lucide="pen-tool"></i> Logo Designer</div>
-            </div>
-        </section>
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skill-pill"><i data-lucide="palette"></i> Newbie Designer</div>
+        <div class="skill-pill"><i data-lucide="layout"></i> Canva</div>
+        <div class="skill-pill"><i data-lucide="pen-tool"></i> Logo Designer</div>
+    </section>
 
-        <section id="projects" class="section">
-            <h2 class="section-header">Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="thumb">1st Year Project</div>
-                    <h4>Portfolio Project</h4>
-                    <p>A single-page responsive website designed with a space theme.</p>
-                    <small>Tools: HTML, CSS, JavaScript</small>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <h2 class="section-header">Contact</h2>
-            <div class="contact-list">
-                <a href="#"><i data-lucide="facebook"></i> Freddy Sabenorio</a>
-                <a href="#"><i data-lucide="instagram"></i> bojji_def</a>
-                <a href="mailto:fredsabenorio@gmail.com"><i data-lucide="mail"></i> fredsabenorio@gmail.com</a>
-            </div>
-        </section>
-    </main>
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="glass-card">
+            <p>Facebook: Freddy Sabenorio</p>
+            <p>Instagram: @bojji_def</p>
+            <p>Email: fredsabenorio@gmail.com</p>
+        </div>
+    </section>
 
     <script>
         lucide.createIcons();
-
-        // Light/Dark Mode Logic
-        const toggle = document.getElementById('theme-toggle');
+        const btn = document.getElementById('theme-toggle');
         const icon = document.getElementById('theme-icon');
-        const root = document.documentElement;
-
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        root.setAttribute('data-theme', savedTheme);
-
-        toggle.addEventListener('click', () => {
-            let current = root.getAttribute('data-theme');
-            let next = current === 'dark' ? 'light' : 'dark';
-            root.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            
-            // Update Icon
+        btn.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            const next = isDark ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
             icon.setAttribute('data-lucide', next === 'dark' ? 'sun' : 'moon');
             lucide.createIcons();
         });
