@@ -1,16 +1,21 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --accent-color: #007bff;
-    --card-bg: #f4f4f4;
-}
+            --bg-color: #85409D; 
+            --text-color: #ffffff; 
+            --primary-color: #d1a3ff; 
+            --secondary-bg: rgba(255, 255, 255, 0.1); 
+            --card-bg: rgba(0, 0, 0, 0.2); 
+            --nav-bg: rgba(133, 64, 157, 0.9); 
+        }
 
-[data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --text-color: #f4f4f4;
-    --accent-color: #37bcf8;
-    --card-bg: #2d2d2d;
-}
+       
+        [data-theme="dark"] {
+            --bg-color: #2e1636;
+            --text-color: #f3e8ff;
+            --primary-color: #a855f7;
+            --secondary-bg: #1e1b4b;
+            --card-bg: #1e1b4b;
+            --nav-bg: rgba(46, 22, 54, 0.9);
+        }
 
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
