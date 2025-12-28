@@ -3,107 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baddest BSIT Student</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Freddy Sabenorio | Portfolio</title>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* 1. THEME VARIABLES */
+        :root[data-theme="dark"] {
+            --bg: #05070a;
+            --accent: #a29bfe;
+            --text: #ffffff;
+            --card: rgba(255, 255, 255, 0.05);
+            --nav: rgba(10, 10, 15, 0.9);
+            --star-color: #ffffff;
+        }
+        :root[data-theme="light"] {
+            --bg: #f0f2f5;
+            --accent: #6c5ce7;
+            --text: #1a1a1a;
+            --card: rgba(255, 255, 255, 0.9);
+            --nav: rgba(255, 255, 255, 0.9);
+            --star-color: #6c5ce7;
+        }
+
+        /* 2. SLIDE ANIMATION SETTINGS */
+        html {
+            scroll-behavior: smooth; /* This makes the "Slide" effect when clicking links */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            transition: background 0.5s ease;
+        }
+
+        /* 3. SPACE BACKGROUND ANIMATION */
+        #star-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+        }
+
+        /* 4. NAVIGATION BAR */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--nav);
+            backdrop-filter: blur(15px);
+            padding: 10px 30px;
+            border-radius: 50px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover { color: var(--accent); transform: translateY(-2px); }
+
+        /* 5. SECTIONS */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin: 10px 0; letter-spacing: -1px; }
+        .tagline { font-size: 1.5rem; color: var(--accent); font-style: italic; }
+
+        .glass-card {
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            max-width: 700px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        /* 6. SKILLS & HOBBIES */
+        .badge-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .badge {
+            background: var(--accent);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .theme-btn {
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .navbar a span { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="nav-links">
-                <a href="#home"><i data-lucide="home"></i> Home</a>
-                <a href="#about"><i data-lucide="user"></i> About Me</a>
-                <a href="#skills"><i data-lucide="cpu"></i> Skills</a>
-                <a href="#projects"><i data-lucide="rocket"></i> Projects</a>
-                <a href="#contact"><i data-lucide="mail"></i> Contact</a>
-                <button id="theme-toggle" class="theme-btn">
-                    <i data-lucide="moon" id="theme-icon"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+    <div id="star-container"></div>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <img src="https://via.placeholder.com/150" alt="Freddy Sabenorio" class="profile-pic">
-                <h1>Freddy Sabenorio</h1>
-                <p class="quote">"You didn't go through all that for nothing."</p>
-                <p>Welcome to my corner of the universe. Explore my journey and creations below.</p>
-            </div>
-        </section>
+    <nav class="navbar">
+        <a href="#home"><i data-lucide="home"></i> <span>Home</span></a>
+        <a href="#about"><i data-lucide="user"></i> <span>About</span></a>
+        <a href="#skills"><i data-lucide="cpu"></i> <span>Skills</span></a>
+        <a href="#contact"><i data-lucide="mail"></i> <span>Contact</span></a>
+        <button id="theme-toggle" class="theme-btn">
+            <i data-lucide="moon" id="theme-icon"></i>
+        </button>
+    </nav>
 
-        <section id="about" class="section">
-            <h2 class="section-header">About Me</h2>
-            <div class="glass-card">
-                <h3>Educational Background</h3>
-                <p>1st Year Information Technology Student. Exploring the vast frontiers of technology and design.</p>
-                
-                <h3>Technical Interests</h3>
-                <p>I'm curious about the future and how digital design shapes our reality.</p>
+    <section id="home" class="hero">
+        <div style="width: 120px; height: 120px; background: #333; border-radius: 50%; border: 3px solid var(--accent); overflow: hidden; margin-bottom: 20px;">
+             <img src="https://via.placeholder.com/120" alt="Profile" style="width:100%">
+        </div>
+        <h1>Freddy Sabenorio</h1>
+        <p class="tagline">"You didn't go through all that for nothing."</p>
+        <p>IT Student & Design Enthusiast</p>
+    </section>
 
-                <h3>Hobbies</h3>
-                <div class="hobbies-grid">
-                    <span><i data-lucide="gamepad-2"></i> Online Games</span>
-                    <span><i data-lucide="award"></i> Badminton</span>
-                    <span><i data-lucide="tv"></i> Watching K-Dramas</span>
-                </div>
+    <section id="about">
+        <div class="glass-card">
+            <h2><i data-lucide="info"></i> About Me</h2>
+            <p><strong>Education:</strong> 1st Year Information Technology Student</p>
+            <p><strong>Vision:</strong> I'm curious about the future and how digital design shapes our reality.</p>
+            
+            <h3 style="margin-top: 20px;">Hobbies</h3>
+            <div class="badge-container">
+                <div class="badge"><i data-lucide="gamepad-2"></i> Online Games</div>
+                <div class="badge"><i data-lucide="activity"></i> Badminton</div>
+                <div class="badge"><i data-lucide="tv"></i> Watching K-Dramas</div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills" class="section">
-            <h2 class="section-header">Skills</h2>
-            <div class="skills-container">
-                <div class="skill-pill"><i data-lucide="palette"></i> Newbie Designer</div>
-                <div class="skill-pill"><i data-lucide="layout"></i> Canva</div>
-                <div class="skill-pill"><i data-lucide="pen-tool"></i> Logo Designer</div>
-            </div>
-        </section>
+    <section id="skills">
+        <h2 style="margin-bottom: 30px;">Technical Skills</h2>
+        <div class="badge-container" style="justify-content: center;">
+            <div class="badge" style="padding: 20px 30px; font-size: 18px;"><i data-lucide="palette"></i> Newbie Designer</div>
+            <div class="badge" style="padding: 20px 30px; font-size: 18px;"><i data-lucide="layout"></i> Canva</div>
+            <div class="badge" style="padding: 20px 30px; font-size: 18px;"><i data-lucide="pen-tool"></i> Logo Designer</div>
+        </div>
+    </section>
 
-        <section id="projects" class="section">
-            <h2 class="section-header">Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="thumb">1st Year Project</div>
-                    <h4>Portfolio Project</h4>
-                    <p>A single-page responsive website designed with a space theme.</p>
-                    <small>Tools: HTML, CSS, JavaScript</small>
-                </div>
+    <section id="contact">
+        <div class="glass-card" style="text-align: center;">
+            <h2>Get In Touch</h2>
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                <a href="#" style="color: var(--text); text-decoration: none;"><i data-lucide="facebook"></i> Freddy Sabenorio</a>
+                <a href="#" style="color: var(--text); text-decoration: none;"><i data-lucide="instagram"></i> bojji_def</a>
+                <a href="mailto:fredsabenorio@gmail.com" style="color: var(--text); text-decoration: none;"><i data-lucide="mail"></i> fredsabenorio@gmail.com</a>
             </div>
-        </section>
-
-        <section id="contact" class="section">
-            <h2 class="section-header">Contact</h2>
-            <div class="contact-list">
-                <a href="#"><i data-lucide="facebook"></i> Freddy Sabenorio</a>
-                <a href="#"><i data-lucide="instagram"></i> bojji_def</a>
-                <a href="mailto:fredsabenorio@gmail.com"><i data-lucide="mail"></i> fredsabenorio@gmail.com</a>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <script>
+        // Initialize Icons
         lucide.createIcons();
 
-        // Light/Dark Mode Logic
-        const toggle = document.getElementById('theme-toggle');
+        // Theme Toggle Logic
+        const btn = document.getElementById('theme-toggle');
         const icon = document.getElementById('theme-icon');
         const root = document.documentElement;
 
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        root.setAttribute('data-theme', savedTheme);
-
-        toggle.addEventListener('click', () => {
-            let current = root.getAttribute('data-theme');
-            let next = current === 'dark' ? 'light' : 'dark';
+        btn.addEventListener('click', () => {
+            const isDark = root.getAttribute('data-theme') === 'dark';
+            const next = isDark ? 'light' : 'dark';
             root.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
+            localStorage.setItem('portfolio-theme', next);
             
-            // Update Icon
             icon.setAttribute('data-lucide', next === 'dark' ? 'sun' : 'moon');
             lucide.createIcons();
         });
+
+        // Generate Random Stars for Space Theme
+        const starContainer = document.getElementById('star-container');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.style.position = 'absolute';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.backgroundColor = 'white';
+            star.style.borderRadius = '50%';
+            star.style.opacity = Math.random();
+            starContainer.appendChild(star);
+        }
     </script>
 </body>
 </html>
