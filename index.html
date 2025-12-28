@@ -1,80 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | IT Student</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Freddy Sabenorio | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">PORTFOLIO</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="theme-toggle" class="theme-btn">
-            <i class="fas fa-moon"></i>
-        </button>
+        <div class="nav-links">
+            <a href="#home"><i data-lucide="home"></i> Home</a>
+            <a href="#about"><i data-lucide="user"></i> About Me</a>
+            <a href="#skills"><i data-lucide="cpu"></i> Skills</a>
+            <a href="#projects"><i data-lucide="rocket"></i> Projects</a>
+            <a href="#contact"><i data-lucide="mail"></i> Contact</a>
+            <button id="theme-toggle" class="theme-btn">
+                <i data-lucide="moon" id="theme-icon"></i>
+            </button>
+        </div>
     </nav>
 
-    <header id="home" class="section">
-        <div class="home-content">
-            <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img">
-            <h1>Hi, I'm [Your Name]</h1>
-            <p class="tagline">Aspiring Web Developer | IT Student</p>
-            <blockquote class="quote">"Code is like humor. When you have to explain it, it’s bad."</blockquote>
+    <section id="home" class="hero">
+        <div class="stars"></div>
+        <div class="hero-content">
+            <div class="profile-img">
+                <img src="https://via.placeholder.com/150" alt="Freddy Sabenorio">
+            </div>
+            <h1>Freddy Sabenorio</h1>
+            <p class="tagline">"You didn't go through all that for nothing."</p>
+            <p class="sub-text">Welcome to my corner of the universe. Explore my journey and creations below.</p>
         </div>
-    </header>
+    </section>
 
     <section id="about" class="section">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <p>I am a first-year IT student passionate about building digital solutions. My educational background focuses on Computer Science fundamentals and modern web technologies.</p>
-            <p><strong>Interests:</strong> UI/UX Design, Open Source, and Artificial Intelligence.</p>
+        <h2 class="section-title"><i data-lucide="info"></i> About Me</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>Educational Background</h3>
+                <p>1st Year Information Technology Student</p>
+                <p>Exploring the vast frontiers of technology and design.</p>
+            </div>
+            <div class="card">
+                <h3>Interests & Mindset</h3>
+                <p>I'm curious about the future and how digital design shapes our reality.</p>
+            </div>
+            <div class="card hobbies">
+                <h3>Hobbies</h3>
+                <ul>
+                    <li><i data-lucide="gamepad-2"></i> Online Games</li>
+                    <li><i data-lucide="activity"></i> Badminton</li>
+                    <li><i data-lucide="tv"></i> Watching K-Dramas</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <section id="skills" class="section">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><h3>Languages</h3><p>HTML, CSS, JavaScript, Python</p></div>
-            <div class="skill-card"><h3>Tools</h3><p>Git, VS Code, Linux</p></div>
-            <div class="skill-card"><h3>Soft Skills</h3><p>Problem Solving, Teamwork</p></div>
+        <h2 class="section-title"><i data-lucide="layers"></i> Skills</h2>
+        <div class="skills-container">
+            <div class="skill-item"><i data-lucide="palette"></i> Newbie Designer</div>
+            <div class="skill-item"><i data-lucide="layout"></i> Canva</div>
+            <div class="skill-item"><i data-lucide="pen-tool"></i> Logo Designer</div>
         </div>
     </section>
 
     <section id="projects" class="section">
-        <h2>My Projects</h2>
-        <div class="project-grid">
+        <h2 class="section-title"><i data-lucide="code"></i> Projects</h2>
+        <div class="projects-grid">
             <div class="project-card">
-                <img src="https://via.placeholder.com/300x180" alt="Project 1">
-                <h3>Student Management System</h3>
-                <p>A C++/Python project to manage student records.</p>
-                <small>Tools: Python, SQLite</small>
+                <div class="project-thumb">Project Thumbnail</div>
+                <div class="project-info">
+                    <h3>First Semester Web Project</h3>
+                    <p>A static website focusing on layout fundamentals.</p>
+                    <p><strong>Role:</strong> Lead Designer</p>
+                    <p><strong>Tools:</strong> HTML5, CSS3</p>
+                </div>
             </div>
+            <div class="project-card">
+                <div class="project-thumb">Project Thumbnail</div>
+                <div class="project-info">
+                    <h3>Interactive Quiz App</h3>
+                    <p>A simple logic-based quiz for fellow students.</p>
+                    <p><strong>Role:</strong> Developer</p>
+                    <p><strong>Tools:</strong> JavaScript, CSS</p>
+                </div>
             </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Contact Me</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" rows="5" required></textarea>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <section id="contact" class="section">
+        <h2 class="section-title"><i data-lucide="message-circle"></i> Contact</h2>
+        <div class="contact-links">
+            <a href="https://facebook.com" class="contact-card"><i data-lucide="facebook"></i> Freddy Sabenorio</a>
+            <a href="https://instagram.com/bojji_def" class="contact-card"><i data-lucide="instagram"></i> @bojji_def</a>
+            <a href="mailto:fredsabenorio@gmail.com" class="contact-card"><i data-lucide="mail"></i> fredsabenorio@gmail.com</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Freddy Sabenorio | Designed for the Future</p>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Dark/Light Mode Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            themeIcon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+            lucide.createIcons();
+        }
+    </script>
 </body>
 </html>
