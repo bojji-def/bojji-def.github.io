@@ -3,39 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astro-Dev Portfolio</title>
+    <title>My Portfolio | IT Student</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="dark"> <div id="stars-container"></div>
+<body>
 
     <nav class="navbar">
-        <div class="logo"><i class="fas fa-rocket"></i> ORBIT</div>
+        <div class="logo">PORTFOLIO</div>
         <ul class="nav-links">
-            <li><a href="#home">Base</a></li>
-            <li><a href="#about">Mission</a></li>
-            <li><a href="#skills">Tech-Stack</a></li>
-            <li><a href="#projects">Expeditions</a></li>
-            <li><a href="#contact">Transmit</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="theme-toggle" class="theme-btn"><i class="fas fa-sun"></i></button>
+        <button id="theme-toggle" class="theme-btn">
+            <i class="fas fa-moon"></i>
+        </button>
     </nav>
 
     <header id="home" class="section">
-        <div class="hero-glass">
-            <div class="profile-glow">
-                <img src="https://via.placeholder.com/150" alt="Profile" class="profile-img">
-            </div>
-            <h1>[Your Name]</h1>
-            <p class="tagline">Astrophysics Enthusiast | IT Student | Web Explorer</p>
-            <p class="quote">"Across the sea of space, the stars are other suns."</p>
+        <div class="home-content">
+            <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img">
+            <h1>Hi, I'm [Your Name]</h1>
+            <p class="tagline">Aspiring Web Developer | IT Student</p>
+            <blockquote class="quote">"Code is like humor. When you have to explain it, it’s bad."</blockquote>
         </div>
     </header>
 
     <section id="about" class="section">
-        <h2 class="neon-text">Detailed Overview</h2>
-        <div class="glass-card">
-            <p>I am a 1st Year IT Student navigating the digital galaxy. My journey involves mastering the languages of the web and exploring the frontiers of technology.</p>
+        <h2>About Me</h2>
+        <div class="about-container">
+            <p>I am a first-year IT student passionate about building digital solutions. My educational background focuses on Computer Science fundamentals and modern web technologies.</p>
+            <p><strong>Interests:</strong> UI/UX Design, Open Source, and Artificial Intelligence.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card"><h3>Languages</h3><p>HTML, CSS, JavaScript, Python</p></div>
+            <div class="skill-card"><h3>Tools</h3><p>Git, VS Code, Linux</p></div>
+            <div class="skill-card"><h3>Soft Skills</h3><p>Problem Solving, Teamwork</p></div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x180" alt="Project 1">
+                <h3>Student Management System</h3>
+                <p>A C++/Python project to manage student records.</p>
+                <small>Tools: Python, SQLite</small>
+            </div>
+            </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" rows="5" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
     </section>
 
