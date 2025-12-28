@@ -3,208 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Baddest Portfolio | IT Student</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --primary-color: #2563eb;
-            --secondary-bg: #f3f4f6;
-            --card-bg: #ffffff;
-            --nav-bg: rgba(255, 255, 255, 0.9);
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #111827;
-            --text-color: #f9fafb;
-            --primary-color: #60a5fa;
-            --secondary-bg: #1f2937;
-            --card-bg: #1f2937;
-            --nav-bg: rgba(17, 24, 39, 0.9);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: 0.3s; line-height: 1.6; }
-
-        /* Navigation */
-        nav {
-            position: fixed; top: 0; width: 100%; padding: 1rem 5%;
-            background: var(--nav-bg); backdrop-filter: blur(10px);
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .nav-links a { text-decoration: none; color: var(--text-color); margin-left: 20px; font-weight: 600; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary-color); }
-
-        /* Theme Toggle */
-        #theme-toggle { cursor: pointer; padding: 5px 10px; border-radius: 20px; border: 1px solid var(--primary-color); background: transparent; color: var(--text-color); }
-
-        /* Sections */
-        section { padding: 100px 10%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        h2 { font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary-color); text-align: center; }
-
-        /* Home Section */
-        #home { text-align: center; }
-        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 4px solid var(--primary-color); margin-bottom: 20px; object-fit: cover; }
-        .tagline { font-size: 1.5rem; opacity: 0.8; }
-        .quote { font-style: italic; margin-top: 15px; color: var(--primary-color); }
-
-        /* About Section */
-        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .about-card { background: var(--secondary-bg); padding: 25px; border-radius: 12px; }
-
-        /* Skills Section */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .skill-category { background: var(--secondary-bg); padding: 20px; border-radius: 10px; border-top: 4px solid var(--primary-color); }
-        .skill-category ul { list-style: none; margin-top: 10px; }
-
-        /* Projects Section */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .project-card { background: var(--card-bg); border: 1px solid #ddd; border-radius: 12px; overflow: hidden; transition: transform 0.3s; }
-        .project-card:hover { transform: translateY(-10px); }
-        .project-img { width: 100%; height: 200px; background: #ccc; display: flex; align-items: center; justify-content: center; }
-        .project-info { padding: 20px; }
-
-        /* Contact Section */
-        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        form { display: flex; flex-direction: column; gap: 15px; }
-        input, textarea { padding: 12px; border-radius: 8px; border: 1px solid #ccc; background: var(--secondary-bg); color: var(--text-color); }
-        button[type="submit"] { padding: 12px; background: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .about-content, .contact-container { grid-template-columns: 1fr; }
-            nav { padding: 1rem; }
-            .nav-links { display: none; } /* Simplified for template */
-        }
-    </style>
+    <title>Astro-Dev Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="dark"> <div id="stars-container"></div>
 
-    <nav>
-        <div class="logo"><strong>Portfolio</strong></div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <button id="theme-toggle">🌓 Toggle Mode</button>
-        </div>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-rocket"></i> ORBIT</div>
+        <ul class="nav-links">
+            <li><a href="#home">Base</a></li>
+            <li><a href="#about">Mission</a></li>
+            <li><a href="#skills">Tech-Stack</a></li>
+            <li><a href="#projects">Expeditions</a></li>
+            <li><a href="#contact">Transmit</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-btn"><i class="fas fa-sun"></i></button>
     </nav>
 
-    <section id="home">
-        <img src="https://via.placeholder.com/180" alt="Profile Photo" class="profile-img">
-        <h1>Hello, I'm <span style="color: var(--primary-color);">FredRyan Sabenorio</span></h1>
-        <p class="tagline">Baddest IT Student</p>
-        <p class="quote">"Building the future, one line of code at a time."</p>
-        <p style="margin-top: 20px;">Welcome to my digital World the Universe rather. Here you'll find my journey in tech, my projects, and how to reach me.</p>
-    </section>
+    <header id="home" class="section">
+        <div class="hero-glass">
+            <div class="profile-glow">
+                <img src="https://via.placeholder.com/150" alt="Profile" class="profile-img">
+            </div>
+            <h1>[Your Name]</h1>
+            <p class="tagline">Astrophysics Enthusiast | IT Student | Web Explorer</p>
+            <p class="quote">"Across the sea of space, the stars are other suns."</p>
+        </div>
+    </header>
 
-    <section id="about">
-        <h2>About Badgal Me</h2>
-        <div class="about-content">
-            <div class="about-card">
-                <h3>Education & Interests</h3>
-                <p>Currently pursuing a degree in Information Technology. I am deeply interested in how modern web architectures work and practicing Graphic Designer</p>
-            </div>
-            <div class="about-card">
-                <h3>Hobbies</h3>
-                <p>When I'm not coding, you can find me:</p>
-                <ul>
-                    <li>🏸 Playing Badminton</li>
-                    <li>🎮 Playing Online Games (Strategy & FPS)</li>
-                    <li>📚 Learning about new Linux Distros</li>
-                </ul>
-            </div>
+    <section id="about" class="section">
+        <h2 class="neon-text">Detailed Overview</h2>
+        <div class="glass-card">
+            <p>I am a 1st Year IT Student navigating the digital galaxy. My journey involves mastering the languages of the web and exploring the frontiers of technology.</p>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Languages</h3>
-                <ul><li>HTML5 / CSS3</li><li>JavaScript</li><li>Python</li></ul>
-            </div>
-            <div class="skill-category">
-                <h3>Tools</h3>
-                <ul><li>Git & GitHub</li><li>VS Code</li><li>Docker</li><li>Linux</li></ul>
-            </div>
-            <div class="skill-category">
-                <h3>Soft Skills</h3>
-                <ul><li>Problem Solving</li><li>Team Collaboration</li><li>Adaptability</li></ul>
-            </div>
-            <div class="skill-category">
-                <h3>Technical Areas</h3>
-                <ul><li>Web Development</li><li>Networking</li><li>Databases</li></ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-img">Project Thumbnail 1</div>
-                <div class="project-info">
-                    <h3>Simple Calculator</h3>
-                    <p>A web-based calculator that performs basic arithmetic operations with a clean UI.</p>
-                    <p><strong>Role:</strong> Lead Developer</p>
-                    <p><strong>Tools:</strong> HTML, CSS, JavaScript</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">Project Thumbnail 2</div>
-                <div class="project-info">
-                    <h3>Personal Blog Template</h3>
-                    <p>A responsive blog layout designed for 1st-year Web Development coursework.</p>
-                    <p><strong>Role:</strong> UI Designer</p>
-                    <p><strong>Tools:</strong> CSS Flexbox, HTML5</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-container">
-            <div>
-                <h3>Contact Info</h3>
-                <p>📧 email@fredsabenorio@gmail.com</p>
-                <p>🔗 <a href="#">LinkedIn Profile</a></p>
-                <p>💻 <a href="#">GitHub Profile</a></p>
-                <p>📘 <a href="#">FB: Freddy Sabenorio</a></p>
-            </div>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <script>
-        // Dark/Light Mode Logic
-        const themeToggle = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'dark') {
-                theme = 'light';
-            } else {
-                theme = 'dark';
-            }
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
