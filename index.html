@@ -9,16 +9,16 @@
         /* 1. THEME VARIABLES */
         :root[data-theme="dark"] {
             --bg: #05070a;
-            --accent: #a29bfe;
+            --accent: #8f5ef0;
             --text: #ffffff;
             --card: rgba(255, 255, 255, 0.05);
             --nav: rgba(10, 10, 15, 0.9);
             --star-color: #ffffff;
         }
         :root[data-theme="light"] {
-            --bg: #f0f2f5;
-            --accent: #6c5ce7;
-            --text: #1a1a1a;
+            --bg: #d29de0;
+            --accent: #672ccd;
+            --text: #a327c2ba;
             --card: rgba(255, 255, 255, 0.9);
             --nav: rgba(255, 255, 255, 0.9);
             --star-color: #6c5ce7;
@@ -140,10 +140,13 @@
 
     <div id="star-container"></div>
 
-    <nav class="navbar">
+   <nav class="navbar">
         <a href="#home"><i data-lucide="home"></i> <span>Home</span></a>
         <a href="#about"><i data-lucide="user"></i> <span>About</span></a>
         <a href="#skills"><i data-lucide="cpu"></i> <span>Skills</span></a>
+        
+        <a href="#projects"><i data-lucide="rocket"></i> <span>Projects</span></a>
+        
         <a href="#contact"><i data-lucide="mail"></i> <span>Contact</span></a>
         <button id="theme-toggle" class="theme-btn">
             <i data-lucide="moon" id="theme-icon"></i>
@@ -151,13 +154,16 @@
     </nav>
 
     <section id="home" class="hero">
-        <div style="width: 200px; height: 200px; background: #333; border-radius: 75%; border: 5px solid var(--accent); overflow: hidden; margin-bottom: 20px;">
-             <img src="badgal.jpg" alt="" style="width:100%">
-        </div>
-        <h1>Welcome to my Dominion</h1>
-        <p class="tagline">"You didn't go through all that for nothing."</p>
-        <p>IT Student & Design Enthusiast</p>
-    </section>
+    <div style="width: 200px; height: 200px; background: #333; border-radius: 75%; border: 5px solid var(--accent); overflow: hidden; margin-bottom: 20px; position: relative; z-index: 5;">
+         <img src="badgal.jpg" alt="" style="width:100%">
+    </div>
+
+    <div class="text-box">
+        <h1 class="main-title">Welcome to my Dominion</h1>
+        <p class="tagline">"I'm a baddie baby that's how my mommy made me."</p>
+        <p class="sub-info">IT Student & Design Enthusiast</p>
+    </div>
+</section>
 
     <section id="about">
         <div class="glass-card">
@@ -169,7 +175,7 @@
             <h3 style="margin-top: 20px;">Hobbies:</h3>
             <div class="badge-container">
                 <div class="badge"><i data-lucide="gamepad-2"></i> Online Games</div>
-                <div class="badge"><i data-lucide="mdi--badminton"></i> Badminton</div>
+                <div class="badge"><i data-lucide="award"></i> Badminton</div>
                 <div class="badge"><i data-lucide="tv"></i> Watching K-Dramas</div>
             </div>
         </div>
@@ -181,6 +187,18 @@
             <div class="badge" style="padding: 100px 60px; font-size: 18px;"><i data-lucide="palette"></i> Newbie Designer</div>
             <div class="badge" style="padding: 100px 60px; font-size: 18px;"><i data-lucide="layout"></i> Canva</div>
             <div class="badge" style="padding: 100px 60px; font-size: 18px;"><i data-lucide="pen-tool"></i> Logo Designer</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="glass-card">
+            <div style="width: 200px; height: 200px; background: #333; border-radius: 75%; border: 5px solid var(--accent); overflow: hidden; margin-bottom: 20px; position: relative; z-index: 5; ">
+         <img src="logo.png" alt="" style="width:100%">
+    </div>
+            <h2><i data-lucide="rocket"></i> JPCS Logo Entry</h2>
+            <p><strong>Tool:</strong> Canva </p>
+            <p><strong>Description:</strong> I participated the Logo Entry Competition back when I was a 1st year student and this Logo is my own idea to create like both arm of a human & robot to connect the present to future and see how digital design shapes our reality..</p>
+            
         </div>
     </section>
 
