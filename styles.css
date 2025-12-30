@@ -1,6 +1,6 @@
 :root[data-theme="dark"] {
     --bg: #05070a;
-    --accent: #a29bfe;
+    --accent: #8f5ef0;
     --text: #ffffff;
     --card: rgba(255, 255, 255, 0.05);
     --nav: rgba(10, 10, 15, 0.8);
@@ -8,9 +8,9 @@
 }
 
 :root[data-theme="light"] {
-    --bg: #f0f2f5;
-    --accent: #6c5ce7;
-    --text: #1a1a1a;
+    --bg: #d29de0;
+    --accent: #672ccd;
+    --text: #a327c2ba;
     --card: rgba(255, 255, 255, 0.8);
     --nav: rgba(255, 255, 255, 0.8);
     --space-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -103,4 +103,9 @@ body {
 @media (max-width: 600px) {
     .nav-links a span { display: none; } /* Show only icons on small phones */
     .navbar { width: 95%; padding: 10px; }
+}
+
+[data-theme="light"] .main-title,
+[data-theme="light"] .sub-info {
+    color: #6c5ce7 !important;
 }
